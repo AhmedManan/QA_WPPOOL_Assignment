@@ -4,10 +4,11 @@ class AdminDashboard:
 
     def __init__(self, page:Page):
         self.page = page
+        self.admin_dashboard_url="/wp-admin"
 
     def goto(self):
         # Admin Dashboard URL
-        self.page.goto("/wp-admin")
+        self.page.goto(self.admin_dashboard_url)
 
     def is_dashboard_visible(self):
         # Check Dashboard Widgets Wrap Visibility

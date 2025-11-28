@@ -1,10 +1,18 @@
 import pytest
 from playwright.sync_api import sync_playwright
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+base_url = os.getenv("BASE_URL")
+admin_username = os.getenv("ADMIN_USERNAME")
+admin_password = os.getenv("ADMIN_PASSWORD")
 
 @pytest.fixture(scope="session")
 def browser():
     with sync_playwright() as pw:
-        browser = pw.chromium.launch(headless=True, slow_mo=500)
+        browser = pw.chromium.launch(headless=False, slow_mo=500)
         yield browser
         browser.close()
 
