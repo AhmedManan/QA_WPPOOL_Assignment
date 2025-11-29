@@ -60,4 +60,9 @@ class FlextableDashboard:
         expect(self.dashboard_table_locator).to_be_visible()
 
     def copy_shortcode(self):
-        self.create_new_table()
+        self.goto()
+        # self.page.locator(".btn-shortcode").click()
+        copied_shortcode = self.page.locator(".btn-shortcode").inner_text()
+        actual_shortcode = copied_shortcode.replace('=', ' id=')
+        print(actual_shortcode)
+        return actual_shortcode

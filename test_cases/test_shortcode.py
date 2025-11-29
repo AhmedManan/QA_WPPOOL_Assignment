@@ -14,17 +14,18 @@ class TestShortcode:
         login = LoginPage(page)
         login.login()
 
+        flextable_dashboard = FlextableDashboard(page)
+        shortcode = flextable_dashboard.copy_shortcode()
+
         shortcode_page = ShortcodeFunctionalityTestPage(page)
 
-        # CALL the method and save the boolean result
         page_is_missing = shortcode_page.page_not_exists()
 
-        # Use the SAVED variable in the conditional statement
         if page_is_missing:
-            # If page is missing (page_is_missing == True), create the page first.
             shortcode_page.create_page()
-            shortcode_page.create_shortcode()
+            shortcode_page.create_shortcode(shortcode)
+            shortcode_page.goto()
         else:
-            # If page exists (page_is_missing == False), skip creation and just create/update shortcode.
-            shortcode_page.create_shortcode()
+            shortcode_page.create_shortcode(shortcode)
+            shortcode_page.goto()
 

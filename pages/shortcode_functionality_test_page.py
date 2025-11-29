@@ -39,7 +39,15 @@ class ShortcodeFunctionalityTestPage:
             self.new_page_publish_button.click()
             self.new_page_editor_publish_button.click()
 
-    def create_shortcode(self):
+    def create_shortcode(self, shortcode:str):
         self.goto()
         self.page.get_by_role("menuitem", name=" Edit Page").click()
+        self.page.get_by_role("button", name="Add block").click()
+        self.page.get_by_role("button", name="Browse all. This will open").click()
+        self.page.get_by_role("option", name="Shortcode").click()
+        self.page.get_by_role("textbox", name="Shortcode text").click()
+        self.page.get_by_role("textbox", name="Shortcode text").fill(shortcode)
+        self.page.get_by_role("button", name="Save", exact=True).click()
+        self.page.get_by_test_id("snackbar").get_by_role("link", name="View Page").click()
+
 
