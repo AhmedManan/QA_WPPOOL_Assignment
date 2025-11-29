@@ -1,8 +1,6 @@
-import os
 from playwright.sync_api import Page
 from pages.login_page import LoginPage
 from pages.plugin_page import PluginPage
-# from pages.admin_dashboard import AdminDashboard
 
 class TestPluginPage:
 
@@ -18,13 +16,23 @@ class TestPluginPage:
         plugin_page = PluginPage(page)
         plugin_page.goto()
 
-        if plugin_page.is_plugin_visible():
+        # --- Check Status and Toggle Logic ---
 
-            if plugin_page.activate_plugin_link.is_visible():
-                plugin_page.deactivate_plugin()
-            elif plugin_page.deactivate_plugin_link.is_visible():
-                plugin_page.activate_plugin()
+        if plugin_page.activate_plugin_link.is_visible():
+            print("Plugin is Inactive. Activating...")
+            # Use the corrected method name
+            plugin_page.activate_plugin()
 
+            # If the 'Deactivate' link is visible, the plugin is ACTIVE. We must DEACTIVATE it.
+        # Uses the corrected attribute name 'deactivate_link'
+        elif plugin_page.deactivate_plugin_link.is_visible():
+            print("Plugin is Active. Deactivating...")
+            # Use the corrected method name
+            plugin_page.deactivate_plugin()
+
+        # If neither link is visible, the plugin may not be present on the page.
         else:
+            print("Plugin status links not found. Attempting to upload...")
             plugin_page.upload_plugin()
+            # Ideally, you'd add steps here to check visibility and activate after upload
 
