@@ -6,9 +6,9 @@
 - [Project Setup](#-project-setup)
 
 ## 🔎 View Live Report
-
-- Allure Report:
-- HTML Report:
+Check the test report live:
+- Allure Report: [View Allure Report](/QA_WPPOOL_Assignment/reports/allure-report/)
+- HTML Report: [View HTML Self Contained Report](/QA_WPPOOL_Assignment/reports/)
 
 ## ⚙️ Project Setup
 
@@ -32,3 +32,7 @@ To install all the libraries, go to your project root directory and open termina
 ```bash
 python -m pip install -r requirements.txt
 ```   
+### Performing Tests
+
+### Report Generation
+

@@ -9,6 +9,7 @@ class TestPluginPage:
         """Verify FlexTable Plugin Activation Status"""
         # ------------------------------------
 
+        # First Perform Login
         login = LoginPage(page)
         login.login()
 
