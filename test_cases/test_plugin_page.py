@@ -12,27 +12,23 @@ class TestPluginPage:
         login = LoginPage(page)
         login.login()
 
-        # Simple validation: admin bar appears
+        # Navigate to plugin page
         plugin_page = PluginPage(page)
         plugin_page.goto()
 
-        # --- Check Status and Toggle Logic ---
-
+        # Check Status and Toggle Logic
         if plugin_page.activate_plugin_link.is_visible():
-            print("Plugin is Inactive. Activating...")
-            # Use the corrected method name
+            print("Plugin is Deactivated. Activating...")
+            # If plugin is deactivated, activate plugin
             plugin_page.activate_plugin()
 
-            # If the 'Deactivate' link is visible, the plugin is ACTIVE. We must DEACTIVATE it.
-        # Uses the corrected attribute name 'deactivate_link'
         elif plugin_page.deactivate_plugin_link.is_visible():
-            print("Plugin is Active. Deactivating...")
-            # Use the corrected method name
+            print("Plugin is Activated. Deactivating...")
+            # # If plugin is activated, deactivate plugin
             plugin_page.deactivate_plugin()
 
-        # If neither link is visible, the plugin may not be present on the page.
+        # If neither link is visible, install the plugin zip file.
         else:
             print("Plugin status links not found. Attempting to upload...")
             plugin_page.upload_plugin()
-            # Ideally, you'd add steps here to check visibility and activate after upload
 
