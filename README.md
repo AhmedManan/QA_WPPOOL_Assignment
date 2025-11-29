@@ -7,8 +7,8 @@
 
 ## 🔎 View Live Report
 Check the test report live:
-- Allure Report: [View Allure Report](/QA_WPPOOL_Assignment/reports/allure-report/)
-- HTML Report: [View HTML Self Contained Report](/QA_WPPOOL_Assignment/reports/)
+- Allure Report: [View Allure Report](https://ahmedmanan.github.io/QA_WPPOOL_Assignment/reports/allure-report/)
+- HTML Report: [View HTML Self Contained Report](https://ahmedmanan.github.io/QA_WPPOOL_Assignment/QA_WPPOOL_Assignment/reports/)
 
 ## ⚙️ Project Setup
 
