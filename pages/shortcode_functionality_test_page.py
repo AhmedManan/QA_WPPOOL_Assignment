@@ -65,6 +65,9 @@ class ShortcodeFunctionalityTestPage:
         self.goto()
         # self.page.get_by_test_id("snackbar").get_by_role("link", name="View Page").click()
 
+    def check_table_exist(self):
+        expect(self.table_warper).to_be_visible()
+
     def check_entry_level_exist(self):
         expect(self.entry_level_css_locator).to_be_visible()
 

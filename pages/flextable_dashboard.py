@@ -39,6 +39,10 @@ class FlextableDashboard:
         self.show_table_description_checkbox = page.get_by_role("checkbox", name="Show Table description below")
         self.show_entry_info_checkbox = page.get_by_role("checkbox", name="Show entry info")
         self.show_table_pagination_checkbox= page.get_by_role("checkbox", name="Show pagination")
+        self.subtab_styling_button = page.get_by_role("button", name="Styling")
+        self.rows_to_show_per_page_checkbox = page.get_by_label("Rows to show per page")
+        self.table_height_checkbox = page.get_by_label("Table height")
+
 
 
 
@@ -81,6 +85,13 @@ class FlextableDashboard:
         self.navigate_to_table_customization_tab()
         self.show_entry_info_checkbox.check()
         self.show_table_pagination_checkbox.check()
+        self.save_changes_button.click()
+
+    def navigate_to_table_customization_table_rows_height(self):
+        self.navigate_to_table_customization_tab()
+        self.subtab_styling_button.click()
+        self.rows_to_show_per_page_checkbox.select_option("10")
+        self.table_height_checkbox.select_option("800")
         self.save_changes_button.click()
 
     def verify_dashboard_table(self):
