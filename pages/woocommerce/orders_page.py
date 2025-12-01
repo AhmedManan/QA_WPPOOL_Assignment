@@ -2,7 +2,7 @@ from playwright.sync_api import Page, expect
 import re
 from conftest import base_url
 
-class CheckoutPage:
+class OrdersPage:
 
     def __init__(self, page: Page):
         self.page = page
@@ -14,6 +14,9 @@ class CheckoutPage:
 
     def goto(self):
         self.page.goto(base_url+self.page_url)
+
+    def view_orders(self):
+
 
     def confirm_order(self):
         return

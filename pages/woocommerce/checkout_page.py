@@ -23,6 +23,9 @@ class CheckoutPage:
         self.place_order_button = page.get_by_role("button", name="Place Order")
         self.total_price_amount_css_locator = page.locator('.wc-block-components-totals-footer-item-tax-value')
 
+        self.edit_shipping_address_button = page.get_by_role("button", name="Edit shipping address")
+        self.use_same_address_for_billing_checkbox = page.get_by_role("checkbox", name="Use same address for billing")
+
         # User Locators
         self.user_email = 'test@gmail.com'
         self.user_first_name = 'Manan'
@@ -38,7 +41,14 @@ class CheckoutPage:
     def goto(self):
         self.page.goto(base_url+self.page_url)
 
+    def check_shipping_fields_visibility(self):
+        if self.edit_shipping_address_button.is_visible():
+            self.edit_shipping_address_button.click()
+        else:
+            pass
+
     def contact_shipping_form(self):
+        self.check_shipping_fields_visibility()
         self.email_textfield.fill(self.user_email)
         self.first_name_textfield.fill(self.user_first_name)
         self.last_name_textfield.fill(self.user_last_name)
@@ -47,6 +57,10 @@ class CheckoutPage:
         self.district_name_dropdown.select_option(self.user_district_option)
         self.postal_code_textfield.fill(self.user_posta_code)
         self.phone_number_textfield_locator.fill(self.user_phone_number)
+        if not self.use_same_address_for_billing_checkbox.is_checked():
+            self.use_same_address_for_billing_checkbox.check()
+        else:
+            pass
         self.add_a_note_checkbox.check()
         self.notes_about_your_order_textfield_locator.click()
         self.notes_about_your_order_textfield_locator.fill(self.user_note)

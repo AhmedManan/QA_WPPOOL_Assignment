@@ -1,8 +1,7 @@
-from playwright.sync_api import Page
 from pages.login_page import LoginPage
 from pages.woocommerce.order_history_page import OrderHistoryPage
 from utils.product_data_utils import get_csv_data, get_expected_product_names
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page
 
 
 class TestUserAccountOrderHistory:
