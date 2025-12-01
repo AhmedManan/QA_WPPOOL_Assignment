@@ -70,7 +70,9 @@ class ShortcodeFunctionalityTestPage:
     def check_table_exist(self):
         expect(self.table_warper).to_be_visible()
 
+
     def check_table_deleted(self):
+        expect(self.table_warper).not_to_be_visible()
         expect(self.table_deleted_text).to_be_visible()
 
     def check_entry_level_exist(self):

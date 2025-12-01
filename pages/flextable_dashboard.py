@@ -102,6 +102,7 @@ class FlextableDashboard:
 
     def verify_dashboard_table(self):
         self.goto()
+        # Verifying the visibility at the same time with it's locator contains the given name from table_data.csv file
         expect(self.dashboard_table_locator).to_be_visible()
 
     def copy_shortcode(self):

@@ -1,5 +1,8 @@
 from playwright.sync_api import Page, expect
 
+from conftest import base_url
+
+
 class AdminDashboard:
 
     def __init__(self, page:Page):
@@ -8,7 +11,7 @@ class AdminDashboard:
 
     def goto(self):
         # Admin Dashboard URL
-        self.page.goto(self.admin_dashboard_url)
+        self.page.goto(base_url+self.admin_dashboard_url)
 
     def is_dashboard_visible(self):
         # Check Dashboard Widgets Wrap Visibility

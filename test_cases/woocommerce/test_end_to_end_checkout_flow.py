@@ -1,4 +1,5 @@
-from conftest import base_url
+import re
+from pages.admin_dashboard import AdminDashboard
 from pages.login_page import LoginPage
 from pages.woocommerce.orders_page import OrdersPage
 from pages.woocommerce.product_page import ProductPage
@@ -43,7 +44,11 @@ class TestCheckoutFlow:
         checkout_page.contact_shipping_form()
         checkout_page.place_order()
 
+        pattern = re.compile(r'https://zeushood.com/checkout/order-received/.*')
+        page.wait_for_url(pattern)
+
+        admin_dashboard = AdminDashboard(page)
+        admin_dashboard.goto()
         orders_page = OrdersPage(page)
         orders_page.goto()
-
-        page.pause()
+        orders_page.view_order()
