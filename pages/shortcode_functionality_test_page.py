@@ -26,6 +26,7 @@ class ShortcodeFunctionalityTestPage:
         self.shortcode_option= page.get_by_role("option", name="Shortcode")
         self.shortcode_option_textbox= page.get_by_role("textbox", name="Shortcode text")
         self.page_save_button = page.get_by_role("button", name="Save", exact=True)
+        self.page_shortcode_block_textfield_xpath = page.locator('//*[@id="blocks-shortcode-input-0"]')
 
         # Locator if Table exist
         self.table_title= page.get_by_role("heading", name=table_name)
@@ -36,6 +37,11 @@ class ShortcodeFunctionalityTestPage:
 
         # Locator if Table Deleted
         self.table_deleted_text = page.get_by_role("heading", name="Table maybe deleted or can't")
+
+        # Locator to test Layout
+        self.main_content_container = page.locator("#content")
+        self.problematic_table = page.locator(".gswpts_tables_content")
+        self.problematic_column_xpath = page.locator('//article//table/tbody/tr[4]/td[*]')
 
 
 
@@ -70,6 +76,13 @@ class ShortcodeFunctionalityTestPage:
     def check_table_exist(self):
         expect(self.table_warper).to_be_visible()
 
+    def check_shortcode_exist(self):
+        if self.page_shortcode_block_textfield_xpath.is_visible():
+            self.page_shortcode_block_textfield_xpath.clear()
+            self.page_shortcode_block_textfield_xpath.fill(shortcode)
+        else:
+            pass
+
 
     def check_table_deleted(self):
         expect(self.table_warper).not_to_be_visible()
@@ -80,4 +93,17 @@ class ShortcodeFunctionalityTestPage:
 
     def check_pagination_exist(self):
         expect(self.table_pagination_css_locator).to_be_visible()
+
+    def get_warper_width(self) -> float:
+        box = self.table_warper.bounding_box()
+        # Returns 0 if the element is not visible
+        if box:
+            return box['width']
+        return 0.0
+
+    def get_table_width(self) -> float:
+        box = self.problematic_table.bounding_box()
+        if box:
+            return box['width']
+        return 0.0
 
