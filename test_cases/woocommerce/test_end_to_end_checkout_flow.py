@@ -37,6 +37,19 @@ class TestCheckoutFlow:
 
         cart_page = CartPage(page)
         cart_page.goto()
+        page.wait_for_selector(".wc-block-components-totals-wrapper", state="visible", timeout=10000)
+        # Expected value based on test data: item prices + tax + shipping
+        expected_total = 3461.85  # Example value
+
+        # The actual value from the page
+        actual_total = cart_page.get_cart_total_amount()
+        # print('actual_total: ', actual_total)
+
+        # Assertion
+        assert actual_total == expected_total, (
+            f"Cart Total Mismatch: Expected {expected_total:.2f}, "
+            f"but the cart displayed {actual_total:.2f}."
+        )
         cart_page.proceed_to_checkout()
 
         checkout_page = CheckoutPage(page)

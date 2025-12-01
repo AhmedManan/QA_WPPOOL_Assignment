@@ -48,8 +48,9 @@ class CheckoutPage:
             pass
 
     def contact_shipping_form(self):
-        self.check_shipping_fields_visibility()
+        # self.check_shipping_fields_visibility()
         self.email_textfield.fill(self.user_email)
+        self.check_shipping_fields_visibility()
         self.first_name_textfield.fill(self.user_first_name)
         self.last_name_textfield.fill(self.user_last_name)
         self.address_textfield.fill(self.user_address)
