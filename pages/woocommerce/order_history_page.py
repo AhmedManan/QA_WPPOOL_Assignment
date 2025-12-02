@@ -9,8 +9,9 @@ class OrderHistoryPage:
         self.page_url = '/my-account/orders'
 
         # Locators
-        self.view_order_details_button = page.get_by_role("cell", name="View order")
+        self.view_order_details_button = page.get_by_role("cell", name="View order").first
         self.product_name_locator = page.locator('.product-name')
+        self.order_details_title = page.locator('.woocommerce-order-details__title')
         # self.product_name_locator = page.locator('xpath=table/tbody/tr/td/a')
 
 
@@ -19,6 +20,7 @@ class OrderHistoryPage:
 
     def view_order_details(self):
         self.view_order_details_button.click()
+        self.order_details_title.is_visible()
 
     def get_all_products_in_order(self):
 
