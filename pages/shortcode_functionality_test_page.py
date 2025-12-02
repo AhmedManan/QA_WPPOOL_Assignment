@@ -35,6 +35,7 @@ class ShortcodeFunctionalityTestPage:
         self.table_warper= self.page.locator("#create_tables_wrapper")
         self.entry_level_css_locator= page.locator('#create_tables_info')
         self.table_pagination_css_locator= page.locator('#create_tables_info')
+        self.table_pagination_next_button= page.get_by_role("link", name="Next")
 
         # Locator if Table Deleted
         self.table_deleted_text = page.get_by_role("heading", name="Table maybe deleted or can't")
@@ -98,6 +99,7 @@ class ShortcodeFunctionalityTestPage:
             pass
 
     def table_match_with_google(self):
+        expect(self.table_data_1).to_have_text(self.cell_value_01)
         expect(self.table_data_2).to_have_text(self.cell_value_02)
         expect(self.table_data_2).to_have_text(self.cell_value_02)
         expect(self.table_data_3).to_have_text(self.cell_value_03)
@@ -155,3 +157,14 @@ class ShortcodeFunctionalityTestPage:
 
         print(" Layout verified: Title is above table, Description is below table.")
 
+    def verify_pagination_functionality(self):
+
+        # 1. Check Initial State (First row data)
+        # Assuming the first data row is identifiable, e.g., the name 'Tahsin' from your CSV
+        expect(self.table_data_1).to_be_visible(timeout=5000)
+
+        self.table_pagination_next_button.click()
+        self.page.wait_for_load_state("networkidle")
+
+        # Verify First Row Data has Changed
+        expect(self.table_data_1).not_to_be_visible()

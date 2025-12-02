@@ -20,3 +20,4 @@ class TestTableCustomization:
         shortcode_page.goto()
         shortcode_page.check_entry_level_exist()
         shortcode_page.check_pagination_exist()
+        shortcode_page.verify_pagination_functionality()
