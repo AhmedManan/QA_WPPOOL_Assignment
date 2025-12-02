@@ -19,3 +19,4 @@ class TestTableCustomization:
         shortcode_test_page.goto()
         expect(shortcode_test_page.table_title).to_be_visible()
         expect(shortcode_test_page.table_description).to_be_visible()
+        shortcode_test_page.verify_layout_positioning()

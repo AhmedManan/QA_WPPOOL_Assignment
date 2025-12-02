@@ -126,3 +126,32 @@ class ShortcodeFunctionalityTestPage:
             return box['width']
         return 0.0
 
+    def verify_layout_positioning(self):
+        # Ensure all elements are visible and stable
+        expect(self.table_title).to_be_visible(timeout=5000)
+        expect(self.table_warper).to_be_visible(timeout=5000)
+        expect(self.table_description).to_be_visible(timeout=5000)
+
+        # Get Bounding Boxes
+        title_box = self.table_title.bounding_box()
+        table_box = self.table_warper.bounding_box()
+        desc_box = self.table_description.bounding_box()
+
+        # bounding_box() returns None if not visible
+        if not all([title_box, table_box, desc_box]):
+            raise AssertionError("One or more target elements are not visible on the page.")
+
+        # Assert Title is ABOVE
+        title_is_above = title_box['y'] + title_box['height'] < table_box['y'] + 5
+        assert title_is_above, (
+            f"Title is not above table."
+        )
+
+        # Assert Description is BELOW
+        desc_is_below = desc_box['y'] > table_box['y'] + table_box['height'] - 5
+        assert desc_is_below, (
+            f" Description is not below table."
+        )
+
+        print(" Layout verified: Title is above table, Description is below table.")
+
