@@ -15,6 +15,7 @@ jobs:
     # 🚨 ENVIRONMENT VARIABLES BLOCK
     env:
       # Non-sensitive configuration data
+      BASE_URL: https://zeushood.com
       TABLE_URL: https://docs.google.com/spreadsheets/d/11qRH9xUuglOTIZa7JnWTVBYuGMT32ZhFuJ5_xypApGM
       TABLE_NAME: 'WPPOOL Assignment Table'
       TABLE_DESCRIPTION: 'This table is created from google sheet to perform automation test on WPPOOL flextable plugin'
@@ -22,7 +23,6 @@ jobs:
       # Need to create these secrets in repository settings:
       ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
       ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
-      BASE_URL: ${{ secrets.ADMIN_PASSWORD }}
 
     steps:
     - name: 🔑 Checkout repository
