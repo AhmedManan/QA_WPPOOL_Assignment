@@ -15,7 +15,8 @@ table_description = os.getenv("TABLE_DESCRIPTION")
 @pytest.fixture(scope="session")
 def browser():
     with sync_playwright() as pw:
-        browser = pw.chromium.launch(headless=False, slow_mo=500)
+        # browser = pw.chromium.launch(headless=False, slow_mo=500)
+        browser = pw.chromium.launch(headless=True)  # To run tests through GitHub workflow
         yield browser
         browser.close()
 
