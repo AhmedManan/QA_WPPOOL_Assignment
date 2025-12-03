@@ -1,2 +1,0 @@
-[gswpts_table id="4"]
-The Value Is:::::::: True

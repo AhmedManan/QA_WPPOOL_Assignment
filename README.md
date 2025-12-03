@@ -10,8 +10,8 @@ In this repository contains an automation test suite built with ***Playwright***
 
 ## 🔎 View Live Report
 Check the test report live:
-- Allure Report: [View Allure Report](https://ahmedmanan.github.io/QA_WPPOOL_Assignment/reports/allure-report/)
-- HTML Report: [View HTML Self Contained Report](https://ahmedmanan.github.io/QA_WPPOOL_Assignment/reports/)
+- Allure Report: [View Allure Report](https://ahmedmanan.github.io/QA_WPPOOL_Assignment/test_reports/allure-report/index.html)
+- HTML Report: [View HTML Self Contained Report](https://ahmedmanan.github.io/QA_WPPOOL_Assignment/test_reports/index.html)
 
 ## ⚙️ Project Setup
 
