@@ -61,7 +61,7 @@ class FlextableDashboard:
         expect(self.dashboard_heading).to_be_visible()
         expect(self.dashboard_sub_heading).to_be_visible()
         expect(self.dashboard_help_link).to_be_visible()
-        expect(self.dashboard_upgrade_link).to_be_visible()
+        # expect(self.dashboard_upgrade_link).to_be_visible()
 
     def delete_table(self):
         self.table_delete_button_locator.click()

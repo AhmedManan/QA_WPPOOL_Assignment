@@ -6,7 +6,7 @@ from playwright.sync_api import Page
 
 class TestUserAccountOrderHistory:
 
-    def test_check_out_flow(self, page: Page):
+    def test_order_history(self, page: Page):
         # ------------------------------------
         """User Account Order History"""
         # ------------------------------------
