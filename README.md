@@ -7,6 +7,18 @@ In this repository contains an automation test suite built with ***Playwright***
 ## Table Of Content
 - [View Live Report](#-view-live-report)
 - [Project Setup](#-project-setup)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Setting Up Environment](#setting-up-environment)
+  - [Performing Tests](#performing-tests)
+  - [Report Generation](#report-generation)
+- [Tests](#tests)
+  - [FlexTable Plugin](#part-a-flextable-plugin)
+  - [WooCommerce](#part-b-woocommerce)
+  - [Bonus](#bonus)
+- [Additional Topics](#additional-topics)
+  - [Playwright Javascript WordPress Plugin Test](#playwright-javascript-wordpress-plugin-test)
+  - [Similar Topics & Articles](#similar-topics--articles)
 
 ## 🔎 View Live Report
 Check the test report live:
@@ -118,5 +130,18 @@ allure serve reports/allure-results
 | Task | Description                       | Status |
 |------|-----------------------------------|--------|
 | 01   | Run the test suite from GitAction | ✔️ |
+
+## Additional Topics
+
+### Playwright Javascript WordPress Plugin Test
+In this bellow mentioned project/repository, it contains an automation test suite built with Playwright & JavaScript to test WordPress & WordPress Plugins. I implement the Page Object Model (POM) design pattern.
+
+ **Project Link:** [JS_Playwright_WP_Plugin_Test](https://github.com/AhmedManan/JS_Playwright_WP_Plugin_Test)
+
+### Similar Topics & Articles
+
+[Python Complete Cheat Sheet](https://mananacademy.com/complete-python-cheat-sheet/)
+
+[Complete JavaScript Cheat sheet](https://mananacademy.com/complete-javascript-cheat-sheet/)
 
 [⬆️Back to Top](#qa-wppool-assignment)
