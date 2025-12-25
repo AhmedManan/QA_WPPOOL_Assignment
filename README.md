@@ -4,7 +4,7 @@ In this repository contains an automation test suite built with ***Playwright***
 - FlexTable Plugin
 - WooCommerce
 
-Project Documentation PDF: <a href="https://github.com/AhmedManan/Playwright_WP_Plugin_Automation_Test/Document/Playwright_WordPress_Plugin_Automation_Test.pdf" target="_blank">Playwright_WordPress_Plugin_Automation_Test.pdf</a>
+Project Documentation PDF: <a href="https://github.com/AhmedManan/Playwright_WP_Plugin_Automation_Test/Document/Playwright_WordPress_Plugin_Automation_Test.pdf" target="_blank">Playwright_WP_Ecommerce_Website_Automation_Test.pdf</a>
 
 ## Table Of Content
 - [View Live Report](#-view-live-report)
@@ -17,7 +17,7 @@ Project Documentation PDF: <a href="https://github.com/AhmedManan/Playwright_WP_
 - [Tests](#tests)
   - [FlexTable Plugin](#part-a-flextable-plugin)
   - [WooCommerce](#part-b-woocommerce)
-  - [Bonus](#bonus)
+  - [Test Features](#Test-Features)
 - [Additional Topics](#additional-topics)
   - [Playwright Javascript WordPress Plugin Test](#playwright-javascript-wordpress-plugin-test)
   - [Similar Topics & Articles](#similar-topics--articles)
@@ -127,11 +127,13 @@ allure serve reports/allure-results
 | 01       | End-to-End Checkout Flow | ✔️ |
 | 02       | User Account Order History | ✔️ |
 
-### Bonus 
-
-| Task | Description                       | Status |
-|------|-----------------------------------|--------|
-| 01   | Run the test suite from GitAction | ✔️ |
+### Test Features
+ - Cross Browser Testing
+ - Data Driven Testing
+ - Data Cleaning
+ - Generating Screenshots On Failure
+ - Generating Log Reports
+ - Protecting Secrets through .env file
 
 ## Additional Topics
 
